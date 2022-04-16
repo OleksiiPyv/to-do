@@ -14,7 +14,7 @@
                     @remove-todo="removeTodo"
                 />
             </div>
-            
+
             <p v-else>No data</p>
         </main>
     </div>
@@ -32,7 +32,7 @@ export default {
         return {
             todos: [],
             loading: true,
-            filter: 'all',
+            filter: "all",
         };
     },
 
@@ -50,7 +50,7 @@ export default {
     components: {
         TodoList,
         AddTodo,
-        TodoLoader
+        TodoLoader,
     },
 
     methods: {
@@ -64,14 +64,16 @@ export default {
 
     computed: {
         filteredTodos() {
-            return this.filter === "all" ? this.todos : this.todos.filter(x => {
-                if(this.filter === "completed") {
-                    return x.completed === true;
-                } else {
-                    return x.completed === false;
-                }
-            });
-        }
+            return this.filter === "all"
+                ? this.todos
+                : this.todos.filter((x) => {
+                      if (this.filter === "completed") {
+                          return x.completed === true;
+                      } else {
+                          return x.completed === false;
+                      }
+                  });
+        },
     },
 };
 </script>

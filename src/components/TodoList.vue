@@ -37,15 +37,14 @@ export default {
         removeTodo(id) {
             this.$emit("remove-todo", id);
         },
-        uppercase(v){
+        uppercase(v) {
             return v.toUpperCase();
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style scoped>
-
 .item {
     border: 1px solid;
     border-radius: 4px;
